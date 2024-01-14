@@ -1,4 +1,3 @@
-package strategy;
 
 import java.util.Scanner;
 
