@@ -37,7 +37,7 @@ public class Defenceman extends Player {
 
     @Override
     public String toString() {
-        return getFirstName()+" "+getLastName()+" plays the position Defenceman";
+        return super.toString()+" plays the position Defenceman";
     }
 
     

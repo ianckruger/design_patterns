@@ -38,7 +38,7 @@ public class Forward extends Player {
 
     @Override
     public String toString() {
-        return getFirstName()+" "+getLastName()+" plays the position Forward";
+        return super.toString()+" plays the position Forward";
     }
 
     

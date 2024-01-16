@@ -30,7 +30,7 @@ public class Goalie extends Player {
 
     @Override
     public String toString() {
-        return getFirstName()+" "+getLastName()+" plays the position: Goalie";
+        return super.toString() +" plays the position: Goalie";
     }
 
     
