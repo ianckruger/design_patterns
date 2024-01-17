@@ -10,6 +10,7 @@ public class Cook implements Subject{
 
     public Cook(String name){
         this.name = name;
+        this.observers = new ArrayList<Observer>();
     }
 
     /**
@@ -23,19 +24,30 @@ public class Cook implements Subject{
         }
     }
 
+    @Override
     public void registerObserver(Observer observer){
-        this.observers.add(observer);
+        observers.add(observer);
     }
 
+    @Override
     public void removeObserver(Observer observer){
-        this.observers.remove(observer);
+        observers.remove(observer);
     }
 
+    @Override
     public void notifyObservers(String location, String description, ArrayList<String> accomplices){
-        //Not sure what this means
+        for (Observer observer : observers) {
+            observer.update(location, description, accomplices);
+        }
     }
 
-    public void enterSighting(String location, String description, String accomplices){
-        // not sure what this means
+    public void enterSighting(String location, String description, String accomplices) {
+        String[] temp = accomplices.split(" ");
+        ArrayList<String> accomp = new ArrayList<String>();
+        for (String person : temp ) {
+            accomp.add(person);
+        }
+        notifyObservers(location, description, accomp);
+
     }
 }

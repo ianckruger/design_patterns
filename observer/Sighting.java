@@ -32,9 +32,13 @@ public class Sighting {
      * 
      * @return a list of Strings accomplices that saw the sighting
      */
-    public ArrayList<String> getAccomplices() {
+    public String getAccomplices() {
         if (this.accomplices != null){
-            return this.accomplices;
+            String ret = "";
+            for (String accomplice : accomplices) {
+                ret += accomplice+" ";
+            }
+            return ret;
         } else {
         return null;
         }
