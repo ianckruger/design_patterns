@@ -11,6 +11,10 @@ public class Police implements Observer{
     private String notes;
     private ArrayList<String> people;
 
+    /**
+     * this function registers the police as an observer of the subject and intializes the array lists of locations and people
+     * @param cook
+     */
     public Police(Subject cook){
         this.cook = cook;
         this.cook.registerObserver(this);
@@ -37,6 +41,10 @@ public class Police implements Observer{
         
     }
 
+    /**
+     * This function acts as a toString for the DEA, creating a string list of details of the subject to print
+     * @return a string describing the location, details, and people of a sighting of the Subject
+     */
     public String getLog(){
         String ret = "";
         if (locations != null) {
