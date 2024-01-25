@@ -13,15 +13,11 @@ public abstract class Player {
     }
 
     public String getName() {
-        if (this.name != null) {
-            return this.name;
-        } else {
-            return "none";
-        }
+        return this.name;
     }
 
     public String toString() {
-        return "";
+        return " ";
     }
 
 }
