@@ -8,8 +8,8 @@ public abstract class Player {
     protected ArrayList<String> lines;
 
     public Player(ArrayList<String> lines, String name) {
-        this.name = name;
         this.lines = lines;
+        this.name = name;
     }
 
     public String getName() {
@@ -17,6 +17,7 @@ public abstract class Player {
     }
 
     public String toString() {
+        System.out.println(lines);
         return " ";
     }
 

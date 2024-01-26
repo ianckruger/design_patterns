@@ -16,7 +16,12 @@ public class Sword extends PlayerDecorator {
     @Override
     protected void integrateDecor(ArrayList<String> decor) {
         ArrayList<String> sword = FileReader.getLines("sword.txt");
-        for ()
+        
+    }
+
+    @Override
+    public String getName() {
+        return this.name;
     }
     
 }

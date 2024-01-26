@@ -21,7 +21,7 @@ public class FileReader {
             System.out.println("Error reading file.");
             e.printStackTrace();
         }
-
+        
         return lines;
     }
 }
