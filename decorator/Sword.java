@@ -10,13 +10,18 @@ public class Sword extends PlayerDecorator {
 
     public Sword(Player player) {
         super(player);
-        integrateDecor(lines);
+        integrateDecor(FileReader.getLines("design_patterns/decorator/sword.txt"));
     }
 
+    /**
+     * 
+     * @param decor is the lines of the sword fileZ
+     */
     @Override
     protected void integrateDecor(ArrayList<String> decor) {
-        ArrayList<String> sword = FileReader.getLines("sword.txt");
-        
+        for (int i =0; i < this.lines.size(); i++) {
+            System.out.println(decor.get(i));
+        }
     }
 
     @Override

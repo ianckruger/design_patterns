@@ -17,8 +17,11 @@ public abstract class Player {
     }
 
     public String toString() {
-        System.out.println(lines);
-        return " ";
+        String ret = "";
+        for (String line : lines) {
+            ret += line + "\n";
+        }
+        return ret;
     }
 
 }
