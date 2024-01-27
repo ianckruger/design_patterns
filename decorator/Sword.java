@@ -15,12 +15,14 @@ public class Sword extends PlayerDecorator {
 
     /**
      * 
-     * @param decor is the lines of the sword fileZ
+     * @param decor is the lines of the sword file
      */
     @Override
     protected void integrateDecor(ArrayList<String> decor) {
         for (int i =0; i < this.lines.size(); i++) {
-            System.out.println(decor.get(i));
+            for (int j = 0; j < lines.get(i).length(); j++) {
+                
+            }
         }
     }
 
