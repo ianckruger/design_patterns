@@ -21,7 +21,7 @@ public class VideoGameDriver {
 		Player warrior = new Warrior("Sir. Richard");
 
 		while (true) {
-			//clear();
+			clear();
 			System.out.println("Here's our warrior: ");
 			System.out.println(warrior);
 
