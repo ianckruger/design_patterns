@@ -14,8 +14,9 @@ public class Sword extends PlayerDecorator {
     }
 
     /**
-     * This file iterates through each character of each line
-     * @param decor is the lines of the sword file
+     * this method is an inherited method that uses the inherited player and wraps around the toString to decorate it
+     * with a sword by iterating through each characater in each string index
+     * @param decor a string array that contains the new strings to wrap around the inherited player
      */
     @Override
     protected void integrateDecor(ArrayList<String> decor) {

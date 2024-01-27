@@ -1,5 +1,8 @@
 package decorator;
-
+/**
+ * This file defines the parent class Player with a name and a string depicition of the player
+ * @author Ian Kruger
+ */
 import java.util.ArrayList;
 
 public abstract class Player {
