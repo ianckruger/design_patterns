@@ -1,5 +1,5 @@
 /**
- * 
+ * This file contains the object Word and its descriptors for the flash card object
  * @author Ian Kruger
  */
 public class Word {
@@ -15,12 +15,21 @@ public class Word {
     this.sentence = sentence;
    }
 
+   /**
+    * A getter for the private word name
+    * @return the stored word
+    */
    public String getWord() {
     return  this.word;
    }
 
+   /**
+    * Returns the description of the word, including the type, definition, and sentence.
+    * @return a definition/description of the word
+    */
    public String getDescription() {
-    return this.definition;
+
+    return "Part of speech: "+this.type+"\nDefinition: "+this.definition+"\n"+this.sentence;
    }
 
 }

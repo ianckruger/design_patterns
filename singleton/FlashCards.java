@@ -1,9 +1,8 @@
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Random;
 
 /**
- * 
+ * This file contains a static instance of a FlashCard object
  * @author Ian Kruger
  */
 public class FlashCards {
@@ -14,6 +13,11 @@ public class FlashCards {
 
     private FlashCards() {}
 
+    /**
+     * this function keeps one instance of the current object throughout the file by retrieving a saved instance within the object
+     * if there is no instance it creates a new one
+     * @return an instance of the current object
+     */
     public static FlashCards getInstance() {
         if(flashCards == null) {
             flashCards = new FlashCards();
@@ -24,6 +28,10 @@ public class FlashCards {
         return FlashCards.flashCards;
     }
 
+    /**
+     * this function retrieves the current word of the flash card instance after accessing a new word within the list.
+     * @return an object Word within the array word list
+     */
     public Word getWord() {
         flashCards.currentWord = flashCards.words.get(flashCards.rand.nextInt(flashCards.words.size()));
         return this.currentWord;
