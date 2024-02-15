@@ -1,6 +1,9 @@
 package iterator;
-
-import java.util.Iterator;
+/**
+ * @author Ian Kruger
+ * this class defines the task list object, designed to track, add, and remove tickets within
+ * a given list through implemented Iterator methods.
+ */
 
 public class TaskList {
     
@@ -14,18 +17,28 @@ public class TaskList {
         this.count = 0;
     }
 
+    /**
+     * create a ticket to add to a list
+     * @param name the name of the task
+     * @param teamMember the person making the ticket
+     * @param difficulty how hard the ticket is
+     */
     public void addTicket(String name, String teamMember, int difficulty) {
         Ticket ticket = new Ticket(name, teamMember, difficulty);
-        addTicket(ticket);
+        this.tickets[count] = ticket;
+        count++;
+        // add error checking
     } 
     
     /**
+     * an overload function
      * When you get a ticket that already exists aka move from todo to doing
-     * @param ticket
+     * @param ticket the ticket object of the task
      */
     public void addTicket(Ticket ticket) {
         this.tickets[count] = ticket;
         count++;
+        // add error checking
     }
 
     /**
@@ -39,7 +52,7 @@ public class TaskList {
         do {
             Ticket temp = ticketIterator.next();
             if (temp.getName().equalsIgnoreCase(name)) {
-                
+                removeTicket(ticketIterator.getPosition());
                 return temp;
             } 
         } while (ticketIterator.hasNext());
@@ -55,6 +68,29 @@ public class TaskList {
      * combine each one into one toString
      */
     public String toString() {
-        return " ";
+        String ret = "";
+        TaskListIterator ticketIterator = createIterator();
+        while(ticketIterator.hasNext()) {
+            Ticket temp = ticketIterator.next();
+            ret += temp.toString() + "\n"; 
+        }
+        return ret;
+    }
+
+    /**
+     * simplifiex function for removing a ticket so the code is shorter for the get ticket function
+     * @param index location of the ticket
+     */
+    public void removeTicket(int index) {
+        System.out.println(index);
+        if (tickets.length >2) { 
+            for (int i=index-1; i < this.count; i++) {
+                tickets[i] = tickets[i+1];
+            }
+        }
+        else if (index == 1) {
+            tickets[index] = null;
+        }
+        
     }
 }

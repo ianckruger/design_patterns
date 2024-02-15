@@ -17,7 +17,7 @@ public class Ticket {
     }
 
     public String toString() {
-        return " ";
+        return "- "+name+"("+difficulty+") - "+teamMember;
     }
     
 }

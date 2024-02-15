@@ -19,5 +19,8 @@ public class TaskListIterator implements Iterator{
         return ticket;
     }
 
+    public int getPosition() {
+        return this.position;
+    }
 
 }
