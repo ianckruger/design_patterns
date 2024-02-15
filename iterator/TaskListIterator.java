@@ -1,21 +1,22 @@
 package iterator;
 import java.util.Iterator;
 
-public class TaskListIterator {
+public class TaskListIterator implements Iterator{
     private Ticket[] tickets;
-    private int position;
+    private int position = 0;
 
     TaskListIterator(Ticket[] tickets) {
         this.tickets = tickets;
-        this.position = 0;
     }
 
-    public bool hasNext() {
-        
+    public boolean hasNext() {
+        return (tickets[position] != null && position < tickets.length);
     }
 
     public Ticket next(){
-
+        Ticket ticket = tickets[position];
+        position += 1;
+        return ticket;
     }
 
 
