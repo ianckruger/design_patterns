@@ -53,6 +53,7 @@ public class TaskList {
             Ticket temp = ticketIterator.next();
             if (temp.getName().equalsIgnoreCase(name)) {
                 removeTicket(ticketIterator.getPosition());
+                count --;
                 return temp;
             } 
         } while (ticketIterator.hasNext());
@@ -88,7 +89,10 @@ public class TaskList {
                 tickets[i] = tickets[i+1];
             }
         }
-        else if (index == 1) {
+        else if (index == 0 && tickets[index]!= null) {
+            tickets[index] = tickets[index+1];
+            tickets[index+1] = null;
+        } else {
             tickets[index] = null;
         }
         
