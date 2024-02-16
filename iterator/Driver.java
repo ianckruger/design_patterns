@@ -11,13 +11,9 @@ public class Driver {
 		board.addTicket("Create User Class", "Sam", 2);
 		board.addTicket("Create Author Class", "Sam", 2);
 		board.addTicket("Create Recipe Class", "Jim", 3);
-		System.out.println(board);
 		board.startTicket("Create Git Repo");
-		System.out.println(board);
 		board.finishTicket("Create Git Repo");
-		System.out.println(board);
 		board.startTicket("Create all JSON FIles");
-		System.out.println(board);
 		board.startTicket("Create Recipe Stub");
 
 		System.out.println(board);

@@ -24,6 +24,10 @@ public class TaskList {
      * @param difficulty how hard the ticket is
      */
     public void addTicket(String name, String teamMember, int difficulty) {
+        if(tickets[99] != null) {
+            System.out.println("Task list full. complete tasks first before adding more.");
+            return;
+        }
         Ticket ticket = new Ticket(name, teamMember, difficulty);
         this.tickets[count] = ticket;
         count++;
@@ -60,6 +64,10 @@ public class TaskList {
         return null;
     }
 
+    /**
+     * this function creates a task list iterator to iterate through the list once
+     * @return an Iterator for the class list tickets
+     */
     public TaskListIterator createIterator() {
         return new TaskListIterator(tickets);
     }
@@ -67,6 +75,7 @@ public class TaskList {
     /**
      * iterates over all of the tickets and gets each toString for every ticket
      * combine each one into one toString
+     * @return a string of all combined tasks
      */
     public String toString() {
         String ret = "";
@@ -79,11 +88,11 @@ public class TaskList {
     }
 
     /**
-     * simplifiex function for removing a ticket so the code is shorter for the get ticket function
+     * simplified function for removing a ticket so the code is shorter for the get ticket function
+     * this function checks both the length of the list and the index position to prevent errors.
      * @param index location of the ticket
      */
     public void removeTicket(int index) {
-        System.out.println(index);
         if (tickets.length >2) { 
             for (int i=index-1; i < this.count; i++) {
                 tickets[i] = tickets[i+1];

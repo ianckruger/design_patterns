@@ -1,5 +1,8 @@
 package iterator;
-
+/**
+ * This class defines a ticket of a given task
+ * @author Ian Kruger
+ */
 public class Ticket {
 
     private String name;
@@ -12,6 +15,10 @@ public class Ticket {
         this.difficulty = difficulty;
     }
 
+    /**
+     * This function is used to get the name of the ticket for identification
+     * @return a string of the name
+     */
     public String getName() {
         return this.name;
     }
