@@ -10,6 +10,7 @@ public class SCRUMBoard {
     private TaskList todo;
     private TaskList doing;
     private TaskList done;
+    //done
 
     public SCRUMBoard(String projectName) {
         this.projectName = projectName;
