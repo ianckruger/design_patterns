@@ -23,6 +23,9 @@ public class Ticket {
         return this.name;
     }
 
+    /**
+     * @return a string combination of the attributes
+     */
     public String toString() {
         return "- "+name+"("+difficulty+") - "+teamMember;
     }

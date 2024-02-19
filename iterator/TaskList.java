@@ -40,6 +40,10 @@ public class TaskList {
      * @param ticket the ticket object of the task
      */
     public void addTicket(Ticket ticket) {
+        if(tickets[99] != null) {
+            System.out.println("Task list full. complete tasks first before adding more.");
+            return;
+        }
         this.tickets[count] = ticket;
         count++;
         // add error checking
@@ -48,7 +52,7 @@ public class TaskList {
     /**
      * returns the requested ticket and removes it from the list
      * @param name
-     * @return
+     * @return a ticket of the parameter name
      */
     public Ticket getTicket(String name) {
         TaskListIterator ticketIterator = createIterator();

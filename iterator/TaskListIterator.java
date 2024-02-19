@@ -7,10 +7,11 @@ import java.util.Iterator;
  */
 public class TaskListIterator implements Iterator{
     private Ticket[] tickets;
-    private int position = 0;
+    private int position;
 
     TaskListIterator(Ticket[] tickets) {
         this.tickets = tickets;
+        this.position = 0;
     }
 
     /**
@@ -23,7 +24,7 @@ public class TaskListIterator implements Iterator{
 
     /**
      * this function returns the current positions ticket, then increases it by 1 for the next iteration
-     * @return a ticket of the next position
+     * @return a ticket of the current position
      */
     public Ticket next(){
         Ticket ticket = tickets[position];
